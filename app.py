@@ -2,6 +2,7 @@ from flask import Flask, jsonify, make_response, request
 
 app = Flask(__name__)
 
+
 # collection of businesses information as a Pythion List
 # Each element in the list is a Python dictionary
 businesses =  [
