@@ -71,7 +71,7 @@ def delete_business(id):
         for business in businesses:
             if business["id"] == id:
                 businesses.remove(business)
-            break
+                break
         return make_response( jsonify( {} ), 200)
 
 @app.route("/api/v1.0/businesses/<int:id>/reviews", methods=["GET"])
@@ -110,8 +110,7 @@ def fetch_one_review(b_id, r_id):
             break
     return make_response( jsonify( review ), 200)
 
-@app.route("/api/v1.0/businesses/<int:b_id>/reviews/<int:r_id>",
-methods=["PUT"])
+@app.route("/api/v1.0/businesses/<int:b_id>/reviews/<int:r_id>", methods=["PUT"])
 def edit_review(b_id, r_id):
     for business in businesses:
         if business["id"] == b_id:
@@ -123,8 +122,8 @@ def edit_review(b_id, r_id):
                     break
                 break
     return make_response( jsonify( review ), 200)
-@app.route("/api/v1.0/businesses/<int:b_id>/reviews/<int:r_id>", methods=["DELETE"])
 
+@app.route("/api/v1.0/businesses/<int:b_id>/reviews/<int:r_id>", methods=["DELETE"])
 def delete_review(b_id, r_id):
     for business in businesses:
         if business["id"] == b_id:
